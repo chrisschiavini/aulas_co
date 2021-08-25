@@ -1,12 +1,20 @@
-print('Meu primeiro arquivo indo para o git')
+from Contato import Contato
+from Agenda import Agenda
+from Tarefas import Tarefas
 
-print('Meu segundo arquivo indo para o git')
+class Menu:
+    def __init__(self):
+        self.contato = []
 
-from soma import Soma
 
-a = 3
-b = 4
-soma = Soma()
-resultado = soma.soma(a, b)
+    def Cadastrar_contato(self):
+        nome = input('Digite o nome: ')
+        numero_telefone = input('Digite o número do telefone: ')
+        email_contato = input('Digite o email para contato: ')
+        novo_contato = Contato(nome, numero_telefone, email_contato)
+        self.contato.append(novo_contato)
 
-print('resultado da soma = ' + str(resultado))
+    def listar_contato(self):
+        print('' + str(self.contato))
+
+
